@@ -1,0 +1,193 @@
+// for medium to small screens
+@media screen and (max-width: 768px){
+  html{font-size: 15px;}
+  #main-header{
+    #main-nav .container{
+      #brand{margin: 1.5rem 0;}
+      .nav-list{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        right: -200vw;
+        bottom: 0;
+        width: 100vw;
+        z-index: 9999;
+        background-color: $dark-c;
+        li a{
+          font-size: 1.5rem;
+        }
+      }
+      i{
+        display: block;
+        visibility: visible;
+        cursor: pointer;
+        transition: $ts;
+        color: colorContrast(#121212);
+        &:hover{
+          filter: brightness(50%);
+        }
+        &.fa-times{
+          position: fixed;
+          top: 1.5rem;
+          right: 2.5rem;
+          opacity: 0;
+          pointer-events: none;
+        }
+      }
+    }
+    #showcase.home{
+      .swiper-container {
+        width: 100%;
+        height: 100%;
+        .swiper-pagination-bullet{
+          width: 0.7rem;
+          height: 0.7rem;
+          border-radius: 99rem;
+        }
+        .swiper-pagination-bullet-active{
+          background-color: $light-c !important;
+        }
+      }
+      h1.display-1{font-size: 3rem;}
+    }
+  }
+  #latest-products{
+    .container{
+      .items{
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+  #about-teen-clothing{
+    .container{
+      .items{
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+  #products{
+    .container{
+      .items{
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+  #our-background{
+    .container{
+      .items{
+        grid-template-columns: 1fr;
+        .item{
+          img{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  #our-team-member{
+    .container{
+      .items{
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+  #cards{
+    .container{
+      .items{
+        grid-template-columns: 1fr;
+        .item{
+          .bottom{
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+  #happy-partners, #happy-customers{
+    .container{
+      > ul{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+  #our-location{
+    .container{
+      .items{
+        grid-template-columns: 1fr;
+        gap: 4rem;
+      }
+    }
+  }
+  #send-us-a-message{
+    .container{
+      .items{
+        grid-template-columns: 1fr;
+        gap: 4rem;
+        margin-top: 4rem;
+      }
+    }
+  }
+  // #our-happy-cutomers{
+  //   .container{
+
+  //   }
+  // }
+}
+
+// for small to narrow screens
+@media screen and (max-width: 576px){
+  html{font-size: 14px;}
+  #main-header{
+    #showcase{
+      h1.display-1{font-size: 2.5rem;}
+    }
+  }
+  #latest-products{
+    .container{
+      .items{
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+  #about-teen-clothing{
+    .container{
+      .items{
+        .item{
+          img{width: 100%;}
+        }
+      }
+    }
+  }
+  #purchase{
+    .container{
+      .box{
+        flex-direction: column;
+        a.btn{margin: 2rem 0;}
+      }
+    }
+  }
+  #products{
+    .container{
+      .items{
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+  #our-team-member{
+    .container{
+      .items{
+        grid-template-columns: 1fr;
+        .item{
+          .bottom{
+            p{width: 80%; margin: 1rem auto;}
+          }
+        }
+      }
+    }
+  }
+
+}

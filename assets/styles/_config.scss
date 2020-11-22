@@ -1,0 +1,183 @@
+@import 'normalize';
+@import url('https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&family=Poppins&display=swap');
+:root{
+  --header-font: 'Carrois Gothic SC', sans-serif;
+  --main-font: 'Poppins', sans-serif;
+  --main-color: #f33f3f;
+  --alt-color: #1a66ac;
+  --dark-color: #121212;
+  --semi-dark-color: #616461;
+  --light-color: #f7f7f7;
+  --grey-color: #EEE;
+  --white-color: #FFFFFF;
+  --rad: 0.2rem;
+  --transit: 0.4s linear;
+  --pad: 0.7rem 1.6rem;
+}
+$header-f: var(--header-font);
+$main-f: var(--main-font);
+$main-c: var(--main-color);
+$alt-c: var(--alt-color);
+$dark-c: var(--dark-color);
+$semi-dark: var(--semi-dark-color);
+$light-c: var(--light-color);
+$grey-c: var(--grey-color);
+$white-c: var(--white-color);
+$rad: var(--rad);
+$ts: var(--transit);
+$pad: var(--pad);
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+a{
+  text-decoration: none;
+  color: $alt-c;
+  display: inline-block;
+}
+input,textarea,button{
+  font-family: $main-f;
+  border: 0;
+  outline: none;
+  background: transparent;
+  padding: $pad;
+  border-radius: $rad;
+  display: inline-block;
+}
+.container{
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  overflow: visible;
+  &-fluid{
+    width: 95%;
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+.pointer{cursor: pointer;}
+.hide{visibility: hidden; display: none;}
+.show{visibility: visible; display: block;}
+.upper{text-transform: uppercase;}
+.lower{text-transform: lowercase;}
+@for $i from 1 through 4 {
+  .display-#{$i}{
+    font-size: ($i + 4) / $i + 0.5 + rem;
+  }
+}
+@function colorContrast($color){
+  @if(lightness($color) > 50) {
+    @return var(--dark-color);
+  }
+  @else {
+    @return var(--white-color);
+  }
+}
+.btn{@extend %btn-shared}
+.bg, .btn{
+  &-dark{
+    background-color: $dark-c;
+    color: colorContrast(#121212)
+  }
+  &-light{
+    background-color: $light-c;
+    color: colorContrast(#f7f7f7)
+  }
+  &-white{
+    background-color: $white-c;
+    color: colorContrast(#FFFFFF)
+  }
+  &-main{
+    background-color: $main-c;
+    color: colorContrast(#f33f3f);
+  }
+  &-alt{
+    background-color: $alt-c;
+    color: colorContrast(#1a66ac);
+  }
+}
+%btn-shared{
+  padding: $pad;
+  border-radius: $rad;
+  transition: $ts;
+  font-size: 0.95rem;
+  text-transform: capitalize;
+  cursor: pointer;
+  &:hover{
+    filter: brightness(125%)
+  }
+}
+@mixin cols {
+  @for $i from 1 through 12 {
+    .col-#{$i}{
+      width: 100% / 12 * $i;
+      display: inline-block;
+    }
+  }
+}
+.row{
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  @include cols
+}
+.header-f{font-family: $header-f;}
+.main-f{font-family: $main-f;}
+.main-c{color: $main-c;}
+.alt-c{color: $alt-c;}
+.semi-dark{color: $semi-dark;}
+.dark-c{color: $dark-c;}
+.light-c{color: $light-c;}
+.white-c{color: $white-c;}
+.align{
+  &-left{text-align: left;}
+  &-center{text-align: center;}
+  &-right{text-align: right;}
+}
+.flex{display: flex;}
+.grid{display: grid;}
+.rounded{border-radius: 99rem;}
+h1,h2,h3,h4,h5,h6{
+  font-family: $header-f;
+  color: $dark-c;
+}
+p,q{
+  font-family: $main-f;
+  color: $semi-dark;
+  line-height: 1.6;
+  word-spacing: 1px;
+}
+@mixin paddings {
+  @for $j from 1 through 4 {
+    .p-#{$j}{
+      padding: $j + rem;
+    }
+    .py-#{$j}{
+      padding-top: $j + rem;
+      padding-bottom: $j + rem;
+    }
+    .px-#{$j}{
+      padding-left: $j + rem;
+      padding-right: $j + rem;
+    }
+  }
+}
+@include paddings;
+@mixin margins {
+  @for $j from 1 through 4 {
+    .m-#{$j}{
+      margin: $j + rem;
+    }
+    .my-#{$j}{
+      margin-top: $j + rem;
+      margin-bottom: $j + rem;
+    }
+    .mx-#{$j}{
+      margin-left: $j + rem;
+      margin-right: $j + rem;
+    }
+  }
+}
+@include margins

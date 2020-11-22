@@ -1,0 +1,117 @@
+// global navbar
+#main-header{
+  #showcase.home{
+    > div{min-height: 100vh; padding-bottom: 4rem;}
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+      .swiper-pagination-bullet{
+        width: 0.7rem;
+        height: 0.7rem;
+        border-radius: 99rem;
+      }
+      .swiper-pagination-bullet-active{
+        background-color: $light-c !important;
+      }
+    }
+    .swiper-slide{
+      text-align: center;
+      position: relative;
+      padding: 25vh 0;
+      height: 100%;
+      background-color: rgba(0,0,0,0.7);
+      h1.display-1{color: $white-c}
+      img{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        object-fit: cover;
+      }
+    }
+  }
+}
+// latest products
+#latest-products{
+  .container{
+    h1.sec-header{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      a{
+        font-size: 1rem;
+        transition: $ts;
+        &:hover{
+          filter: brightness(80%);
+        }
+      }
+    }
+    .items{
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      .item{
+        transition: $ts;
+        &:hover{
+          box-shadow: 0 10px 20px -10px rgba(0,0,0,0.3);
+        }
+        img{width: 100%; height: 200px; cursor: pointer;}
+        .content{
+          padding: 1rem;
+          padding-bottom: 0;
+          background-color: $white-c;
+          h3{justify-content: space-between; align-items: center; margin: 0;}
+          > div{
+            justify-content: space-between; align-items: center;
+          }
+        }
+        
+      }
+    }
+  }
+}
+// about teen clothes
+#about-teen-clothing{
+  .container{
+    .items{
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      justify-content: center;
+      align-items: center;
+      .item{
+        p{font-size: 0.9rem;}
+        ul{
+          margin: 2rem 0;
+          li{
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            list-style: circle;
+            margin-left: 1rem;
+            a{
+              color: $semi-dark;
+              transition: $ts;
+              &:hover{
+                color: $main-c;
+              }
+            }
+          }
+        }
+        a.btn{color: $white-c;}
+      }
+    }
+  }
+}
+// purchase
+#purchase{
+  .container{
+    .box{
+      padding: 1rem;
+      border-radius: $rad;
+      background-color: $grey-c;
+      justify-content: space-between;
+      align-items: center;
+      a.btn{color: $white-c;}
+    }
+  }
+}
